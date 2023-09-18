@@ -16,10 +16,12 @@ class Classroom extends Model
 
     protected $casts = [
         'is_active' => 'boolean',
-    ];
+    ];    
 
-    public function setIsActiveAttribute($value)
+    public function getIsActiveAttribute()
     {
-        $this->attributes['is_active'] = $value ? 1 : 0;
+        return $this->attributes['is_active'] ? 'active' : 'non-active';
     }
+
+    
 }
